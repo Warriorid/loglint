@@ -1,0 +1,24 @@
+version: "2"
+
+linters:
+  enable:
+    - loglint
+
+linters-settings:
+  custom:
+    loglint:
+      path: ./.bin/loglint.so
+      description: Linter for log message style and security
+      original-url: github.com/loglint
+      settings:
+        check-lowercase: true
+        check-english-only: true
+        check-special-chars: true
+        check-sensitive-data: true
+        sensitive-keywords:
+          - password
+          - secret
+          - token
+          - api_key
+          - bearer
+          - jwt
